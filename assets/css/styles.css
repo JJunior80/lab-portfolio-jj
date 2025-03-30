@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@200;400&display=swap');
 
-:root, :root[data-theme='dark'] {
+:root {
   --primary-color: #F0F0F0;
-
   --primary-bg-color: #111217;
   --secondary-bg-color: #28292E;
   --primary-border-color: #28292E;
-	--secondary-border-color: #56575A;
-
+  --secondary-border-color: #56575A;
   --title-color: #F0F0F0;
   --text-color: #9A9A9C;
   --link-color: #9A9A9C;
@@ -17,16 +15,14 @@
 
 :root[data-theme='light'] {
   --primary-color: #0B0B0F;
-
-	--primary-bg-color: #E9E9E9;
-	--secondary-bg-color: #C7C8C9;
-	--primary-border-color: #C7C8C9;
-	--secondary-border-color: #9A9A9C;
-
-	--title-color: #0B0B0F;
-	--text-color: #28292E;
-	--link-color: #28292E;
-	--icon-color: #56575A;
+  --primary-bg-color: #E9E9E9;
+  --secondary-bg-color: #C7C8C9;
+  --primary-border-color: #C7C8C9;
+  --secondary-border-color: #9A9A9C;
+  --title-color: #0B0B0F;
+  --text-color: #28292E;
+  --link-color: #28292E;
+  --icon-color: #56575A;
 }
 
 html[data-theme='light'] .brand__logo {
@@ -37,11 +33,11 @@ html[data-theme='light'] .technologies__logo {
   filter: invert(80%);
 }
 
+/* Estilos Globais */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  vertical-align: baseline;
   list-style: none;
   scrollbar-width: thin;
   scrollbar-color: var(--secondary-bg-color) transparent;
@@ -49,8 +45,17 @@ html[data-theme='light'] .technologies__logo {
 
 body {
   background: var(--primary-bg-color);
-  font-family:'Inter', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: var(--primary-color);
 }
 
 ::-webkit-scrollbar {
@@ -210,24 +215,22 @@ p {
   gap: 1rem;
 }
 
+/* Melhorias nas classes do botão */
 .btn {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.625rem;
-  width: 100%;
   background: transparent;
   border-radius: 3.125rem;
-  border: none;
   padding: 0.875rem 1.5rem;
-  transition: ease-in-out .3s;
+  transition: transform .3s ease-in-out;
   cursor: pointer;
   color: var(--primary-color);
 }
 
 .btn:hover {
   transform: scale(1.05);
-  transition: ease-in-out .3s;
 }
 
 .btn span, .btn i {
@@ -526,6 +529,18 @@ footer p {
     border-bottom: 1px solid var(--primary-border-color);
     padding: 1rem 6rem;
     background: var(--primary-bg-color);
+  }
+
+  @media (min-width: 1200px) {
+    h2 {
+      font-size: 4rem;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    h1 {
+      font-size: 6.25rem;
+    }
   }
 
   .nav--mobile {
